@@ -91,3 +91,15 @@ void inorderPrint(BSTNode* root) {
     cout << root->data << " ";
     inorderPrint(root->right);
 }
+ // Free memory
+    void freeTree(BSTNode* root) {
+    			if(!root) {
+        		return;
+       }
+    			freeTree(root->left);
+    			freeTree(root->right);
+    			delete root;
+}
+
+
+
