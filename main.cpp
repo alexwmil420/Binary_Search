@@ -101,8 +101,6 @@ void inorderPrint(BSTNode* root) {
     			delete root;
 }
 
-<<<<<<< HEAD
-=======
 int main() {
     BSTNode* root = nullptr;
 
@@ -130,6 +128,5 @@ int main() {
     return 0;
 }
 
->>>>>>> testcode
 
 
