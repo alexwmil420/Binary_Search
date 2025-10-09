@@ -193,7 +193,48 @@ int main() {
     freeTree(root);
 
     return 0;
+
+    BSTNode* root = nullptr;
+
+    insertRecursive(root, 8);
+    insertIterative(root, 3);
+    insertIterative(root, 10);
+    insertRecursive(root, 1);
+    insertRecursive(root, 6);
+    insertIterative(root, 14);
+    insertRecursive(root, 4);
+    insertIterative(root, 7);
+    insertRecursive(root, 13);
+
+    cout << "Inorder traversal: ";
+        inorderPrint(root);
+        cout << "\n";
+
+        cout << "Search 7 (rec): " <<
+            (searchRecursive(root,7)?"Found":"Not Found") << "\n";
+        cout << "Search 9 (it): "  << 
+            (searchIterative(root,9)?"Found":"Not Found") << "\n";
+
+    // Perform deletions using deleteRecursive
+        cout << "\n--- Performing deletions ---\n";
+
+        cout << "Deleting 1 (leaf)...\n";
+        deleteRecursive(root, 1);
+        cout << "Deleting 14 (one child)...\n";
+        deleteRecursive(root, 14);
+        cout << "Deleting 8 (two children / root)...\n";
+        deleteRecursive(root, 8);
+        cout << "\nInorder traversal after deletions: ";
+        inorderPrint(root);
+        cout << "\n";
+
+        // Free all dynamically allocated nodes
+        freeTree(root);
+        root = nullptr;
+
+        return 0;
 }
+
 
 
 
